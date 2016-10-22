@@ -1,0 +1,17 @@
+Introduction
+
+  The R script, run_analysis.R, uses the plyr package to create the required tidy data file. The script has the following:
+
+    Merges the training and the test sets to create one data set using rbind and cbind.
+    Extracts only the measurements on the mean and standard deviation for each measurement using the features file to limit the columns.
+    Uses descriptive activity names to name the activities in the data set and labels the data set with descriptive variable names using the activity labels file.
+    From the data set, creates a second, independent tidy data set with the average of each variable for each activity and each subject. Filename is "tidy_averages_data.txt".
+    
+Variables Used
+
+  x_train, y_train, x_test, y_test, subject_train and subject_test contain the data from the downloaded files.
+  x_data, y_data and subject_data merge the datasets (train, test, subject).
+  features contains the correct names for the x_data dataset. activity contains the correct names from the activities variable.
+  collen has the number of columns from the variable mean_and_std_features.
+  all_data merges x_data, y_data and subject_data in a big dataset.
+  tidy_averages_data.txt contains the relevant averages and std data. ddply() from the plyr package is used to create the file.
